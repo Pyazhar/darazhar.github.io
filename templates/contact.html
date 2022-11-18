@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %} Contact{% endblock title %}
+{% block body %}
+
+<!-- Contact Section-->
+<section class="page-section" id="contact" style="background-image:url('static/img/Contact.jpg'); background-attachment:scroll">
+    <div class="container">
+        <!-- Contact Section Heading-->
+        <h2 class="page-section-heading text-center text-uppercase text-white mb-0 pt-5">get in touch!</h2>
+        <!-- Icon Divider-->
+        <div class="divider-custom">
+            <div class="divider-custom-line "></div>
+            <div class="divider-custom-icon "><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line "></div>
+        </div>
+        <!-- Contact Section Form-->
+        <div class="row justify-content-center">
+            <div class="col-lg-8 col-xl-7">
+                <form method="POST" action="/contact" novalidate  Onsubmit=" return validateForm()">
+                  {% csrf_token %}
+                    <div class="form-group" >
+                      <label for="name" id="lname" style="font-size:30px; color:white"  >Full name</label>
+                      <input style=" padding:15px; font-size:20px; background:none; border-style: solid;  color:white"  type="text" maxlength='20' class="form-control" id="name" name="name" aria-describedby="emailHelp" placeholder="Enter your full name" >
+                    </div>
+                    <div id="nameError" class="error"></div>
+ 
+                    <div class="form-group" >
+                      <label for="email" id="Ename" style="font-size:30px; color:white"  >Email</label>
+                      <input style=" padding:15px; font-size:20px; background:none; border-style:solid;  color:white" type="email" maxlength='40' class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter your  email" >
+                    <div id="emailError" class="error"></div>
+                    
+                    <div class="form-group" >
+                      <label for="phone" id="Pname" style="font-size:30px; color:white"  >Phone</label>
+                      <input style=" padding:15px; font-size:20px; background:none; border-style:  solid ; color:white" type="tel" maxlength='13' class="form-control" id="phone" name="phone" aria-describedby="emailHelp" placeholder="Enter your  phone number" >
+                    </div>
+                    <div id="phoneError" class="error"></div>
+                    
+                    <div class="form-group">
+                      <label for="message" id="Mname"style="font-size:30px; color:white" >Message</label>
+                      <textarea class="form-control mb-4" id="message" type="text" style=" background:none; color:#fff; height: 10rem;" name="message" id="message"  placeholder="Enter your message here..." style="height: 10rem; background:none; border-style: solid;" data-sb-validations="required"></textarea>
+                      <div id="messageError" class="error" style="margin:0px"></div>
+                    </div>
+                    
+
+                    <button type="Submit" id="submitForm" href="#name" class="btn btn-primary">Submit</button>
+                    
+                  </form> 
+            </div>
+        </div>
+    </div>
+</section>
+<script src="static/js/myscripts.js"></script>
+
+{% endblock body %}
