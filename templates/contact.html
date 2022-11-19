@@ -16,7 +16,7 @@
         <!-- Contact Section Form-->
         <div class="row justify-content-center">
             <div class="col-lg-8 col-xl-7">
-                <form method="POST" action="/contact" novalidate  Onsubmit=" return validateForm()">
+                <form method="POST" action="/contact"  Onsubmit=" return validateForm()">
                   {% csrf_token %}
                     <div class="form-group" >
                       <label for="name" id="lname" style="font-size:30px; color:white"  >Full name</label>
@@ -25,13 +25,13 @@
                     <div id="nameError" class="error"></div>
  
                     <div class="form-group" >
-                      <label for="email" id="Ename" style="font-size:30px; color:white"  >Email</label>
+                      <label for="email" id="Ename"  style="font-size:30px; color:white"  >Email</label>
                       <input style=" padding:15px; font-size:20px; background:none; border-style:solid;  color:white" type="email" maxlength='40' class="form-control" id="email" name="email" aria-describedby="emailHelp" placeholder="Enter your  email" >
                     <div id="emailError" class="error"></div>
                     
                     <div class="form-group" >
                       <label for="phone" id="Pname" style="font-size:30px; color:white"  >Phone</label>
-                      <input style=" padding:15px; font-size:20px; background:none; border-style:  solid ; color:white" type="tel" maxlength='13' class="form-control" id="phone" name="phone" aria-describedby="emailHelp" placeholder="Enter your  phone number" >
+                      <input style=" padding:15px; font-size:20px; background:none; border-style:  solid ; color:white" type="phone" maxlength='13' class="form-control" id="phone" name="phone" aria-describedby="emailHelp" placeholder="Enter your  phone number" >
                     </div>
                     <div id="phoneError" class="error"></div>
                     
